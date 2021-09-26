@@ -22,11 +22,11 @@ function isPalindrome(str) {
     return str === reverse;
 }
 
-let date = {
-    day: 26,
-    month: 9,
-    year: 2020
-}
+// let date = {
+//     day: 26,
+//     month: 9,
+//     year: 2020
+// }
 
 //ex3
 function convertDatetoStr(date) {
@@ -184,9 +184,6 @@ function getNextPalindromeDate(date) {
 
     return [counter, nextDate];
 }
-
-console.log(getNextPalindromeDate(date));
-
 // additional ex
 function getPreviousPalindromeDate(date) {
     let dayPreviousPalindromeDate = 0;
@@ -204,7 +201,6 @@ function getPreviousPalindromeDate(date) {
     return [dayPreviousPalindromeDate, previousDate];
 }
 
-
 let dateOfBirth = document.querySelector("#input-date");
 let button = document.querySelector("#submit-btn");
 let outputText = document.querySelector("#output");
@@ -213,8 +209,22 @@ button.addEventListener("click", buttonClickHandler);
 
 function buttonClickHandler() {
     let dobInput = dateOfBirth.value;
+    console.log(dobInput);
 
     //if bday not empty
-
+    if (dobInput !== "") {
+        let listOfDate = dobInput.split('-');
+        let date = {
+            day: Number(listOfDate[2]),
+            month: Number(listOfDate[1]),
+            year: Number(listOfDate[0])
+        }
+        console.log(date);
+        let isPalindromeInput = checkPalindromeForDateFormats(date);
+        console.log(isPalindromeInput);
+        if (isPalindromeInput) {
+            outputText.innerText = "Your Birthday is a palindrome!😁";
+        }
+    }
 
 }
