@@ -224,6 +224,9 @@ function buttonClickHandler() {
         console.log(isPalindromeInput);
         if (isPalindromeInput) {
             outputText.innerText = "Your Birthday is a palindrome!😁";
+        } else {
+            let [counter, nextDate] = getNextPalindromeDate(date);
+            outputText.innerText = `The next palindrome date is ${nextDate.day}-${nextDate.month}-${nextDate.year}, you missed it by ${counter} days!🙂`
         }
     }
 
