@@ -228,6 +228,10 @@ function buttonClickHandler() {
             let [counter, nextDate] = getNextPalindromeDate(date);
             outputText.innerText = `The next palindrome date is ${nextDate.day}-${nextDate.month}-${nextDate.year}, you missed it by ${counter} days!🙂`
         }
+    } else {
+        outputText.style.display = "none";
+        outputText.style.display = "block";
+        outputText.innerHTML = " Please enter a valid Date of Birth!";
     }
 
 }
