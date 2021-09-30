@@ -60,7 +60,7 @@ input {
   font-size: larger;
   margin: 1rem 0 0;
   color: #dc2626;
-  padding: 3rem;
+  padding: 1rem;
 }
 footer {
   background-color: var(--primary-color);
